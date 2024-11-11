@@ -68,7 +68,7 @@ void getKeyInput()
                 if (KeyReg2[i] == PRESSED_STATE)
                 {
                     subKeyProcess(i);
-                    timer_counter_button[i] = 2000;
+                    timer_counter_button[i] = 200;
                 }
             }
             else
