@@ -142,19 +142,22 @@ void SCH_Dispatch_Tasks(void) {
 
             // Xóa task nếu nó chỉ cần thực thi một lần
             if (current->Period == 0) {
-                TaskNode_t *temp = current;
+                TaskNode_t *temp = current; //lưu địa chỉ node cần xóa
 
-                if (previous == NULL) {
+                if (previous == NULL) //nếu node cần xóa là nút đầu tiên
+                {
                     head = current->next;
-                } else {
+                }
+                else
+                {
                     previous->next = current->next;
                 }
                 current = current->next;
-                free(temp);
+                free(temp); //giải phóng bộ nhớ của node đã bị xóa tránh trường hợp bị rò rỉ bộ nhớ
                 continue;
             }
         }
-        previous = current;
+        previous = current; //chỉ gán khi node previous chưa bị xóa
         current = current->next;
     }
 }
