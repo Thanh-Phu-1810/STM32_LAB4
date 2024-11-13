@@ -7,7 +7,7 @@
 //
 //#include "scheduler.h"
 //
-//sTaskss SCH_tasks_G[SCH_MAX_TASKS];
+//sTasks SCH_tasks_G[SCH_MAX_TASKS];
 //uint8_t current_index_task = 0;
 //void SCH_Init(void)
 //{
@@ -85,10 +85,12 @@
 //        SCH_tasks_G[current_index_task].TaskID = 0;
 //    }
 //}
-//
-//
 
 
+
+
+
+//---------------Dung linklist va ham update la O(1)
 #include "scheduler.h"
 #include <stdlib.h>
 
@@ -187,6 +189,9 @@ void SCH_Delete(TaskNode_t *task) {
 
 
 
+
+
+//-----------Dung linklist nhung ham update là O(n)------------------
 //#include "scheduler.h"
 //#include <stdlib.h>
 //
